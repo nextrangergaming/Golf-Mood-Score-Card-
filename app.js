@@ -1,7 +1,7 @@
 const moods = [
-  { key: "smile", face: ":)", label: "Smile" },
-  { key: "mediocre", face: ":|", label: "Mediocre" },
-  { key: "sad", face: ":(", label: "Sad" }
+  { key: "smile", face: "\u{1F642}", label: "Smile" },
+  { key: "mediocre", face: "\u{1F610}", label: "Mediocre" },
+  { key: "sad", face: "\u{2639}\u{FE0F}", label: "Sad" }
 ];
 
 const storageKey = "golf-moodcard-holes";
