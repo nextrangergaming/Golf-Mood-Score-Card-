@@ -1,14 +1,17 @@
 :root {
   color-scheme: light;
-  --background: #f3f5f0;
+  --background: #eef7f1;
   --surface: #ffffff;
-  --surface-muted: #edf1e8;
+  --surface-muted: #f3f8ee;
   --text: #182014;
-  --muted: #64705d;
-  --border: #d8dfd2;
-  --smile: #25844f;
-  --mediocre: #b46b16;
-  --sad: #b23a34;
+  --muted: #5d6b55;
+  --border: #c9dbc2;
+  --fairway: #16784f;
+  --sky: #cbe9ff;
+  --sand: #f6d38a;
+  --smile: #159957;
+  --mediocre: #d78820;
+  --sad: #d34b43;
   font-family: "Segoe UI", Arial, sans-serif;
 }
 
@@ -19,18 +22,23 @@
 body {
   min-height: 100vh;
   margin: 0;
-  background: var(--background);
+  background:
+    linear-gradient(180deg, var(--sky) 0, var(--background) 320px),
+    var(--background);
   color: var(--text);
+  -webkit-text-size-adjust: 100%;
 }
 
 button {
   font: inherit;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 .app-shell {
   width: min(920px, 100%);
   margin: 0 auto;
-  padding: 18px;
+  padding: max(18px, env(safe-area-inset-top)) max(18px, env(safe-area-inset-right)) max(18px, env(safe-area-inset-bottom)) max(18px, env(safe-area-inset-left));
 }
 
 .top-bar {
@@ -38,10 +46,13 @@ button {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 18px;
-  background: var(--surface);
-  border: 1px solid var(--border);
+  padding: 20px;
+  background:
+    linear-gradient(135deg, #126a49 0%, #1b9a63 58%, #f4c85b 100%);
+  border: 1px solid #0f6d4b;
   border-radius: 8px;
+  box-shadow: 0 14px 34px rgba(19, 84, 57, 0.18);
+  color: #ffffff;
 }
 
 h1,
@@ -57,22 +68,24 @@ h1 {
 
 .top-bar p {
   margin-top: 8px;
-  color: var(--muted);
+  color: #e8fff2;
   font-size: 1rem;
 }
 
 .reset-button {
   min-width: 82px;
   min-height: 42px;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(255, 255, 255, 0.65);
   border-radius: 8px;
-  background: var(--surface-muted);
-  color: var(--text);
+  background: rgba(255, 255, 255, 0.92);
+  color: #13543a;
   cursor: pointer;
+  font-weight: 700;
 }
 
 .reset-button:disabled {
-  color: #9aa393;
+  color: #8fa595;
+  background: rgba(255, 255, 255, 0.58);
   cursor: not-allowed;
 }
 
@@ -89,10 +102,11 @@ h1 {
   justify-content: center;
   gap: 10px;
   min-height: 62px;
-  border: 1px solid var(--border);
+  border: 1px solid transparent;
   border-radius: 8px;
   background: var(--surface);
   font-size: 1.45rem;
+  box-shadow: 0 8px 18px rgba(37, 76, 50, 0.1);
 }
 
 .summary-item strong {
@@ -100,14 +114,20 @@ h1 {
 }
 
 .summary-smile {
+  background: #dcf7e8;
+  border-color: #94d9af;
   color: var(--smile);
 }
 
 .summary-mediocre {
+  background: #fff0d3;
+  border-color: #f0bd68;
   color: var(--mediocre);
 }
 
 .summary-sad {
+  background: #ffe2df;
+  border-color: #f2aaa4;
   color: var(--sad);
 }
 
@@ -117,7 +137,7 @@ h1 {
 
 h2 {
   margin: 18px 2px 8px;
-  color: var(--muted);
+  color: #21643f;
   font-size: 0.82rem;
   letter-spacing: 0;
   text-transform: uppercase;
@@ -137,10 +157,12 @@ h2 {
   padding: 12px;
   border: 1px solid var(--border);
   border-radius: 8px;
-  background: var(--surface);
+  background: linear-gradient(90deg, #ffffff 0%, #f8fbf1 100%);
+  box-shadow: 0 6px 16px rgba(33, 91, 51, 0.08);
 }
 
 .hole-title {
+  color: #1f5f3c;
   font-weight: 700;
 }
 
@@ -150,14 +172,14 @@ h2 {
 }
 
 .mood-button {
-  width: 54px;
-  height: 48px;
+  width: 58px;
+  height: 52px;
   border: 2px solid transparent;
   border-radius: 8px;
-  background: var(--surface-muted);
+  background: #f8f3df;
   color: var(--text);
   cursor: pointer;
-  font-size: 1.22rem;
+  font-size: 1.35rem;
   font-weight: 800;
 }
 
@@ -202,7 +224,7 @@ h2 {
 
 @media (max-width: 520px) {
   .app-shell {
-    padding: 12px;
+    padding: max(12px, env(safe-area-inset-top)) max(12px, env(safe-area-inset-right)) max(12px, env(safe-area-inset-bottom)) max(12px, env(safe-area-inset-left));
   }
 
   .top-bar {
