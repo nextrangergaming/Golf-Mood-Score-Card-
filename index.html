@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Golf Moodcard</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="top-bar">
+        <div>
+          <h1>Golf Moodcard</h1>
+          <p><span id="completed-count">0</span>/18 holes marked</p>
+        </div>
+        <button class="reset-button" id="reset-button" type="button" aria-label="Reset scorecard" disabled>
+          Reset
+        </button>
+      </header>
+
+      <section class="summary" aria-label="Mood totals">
+        <div class="summary-item summary-smile">
+          <span aria-hidden="true">:)</span>
+          <strong id="smile-count">0</strong>
+          <span class="visually-hidden">smile holes</span>
+        </div>
+        <div class="summary-item summary-mediocre">
+          <span aria-hidden="true">:|</span>
+          <strong id="mediocre-count">0</strong>
+          <span class="visually-hidden">mediocre holes</span>
+        </div>
+        <div class="summary-item summary-sad">
+          <span aria-hidden="true">:(</span>
+          <strong id="sad-count">0</strong>
+          <span class="visually-hidden">sad holes</span>
+        </div>
+      </section>
+
+      <section class="scorecard" aria-label="18 hole golf mood scorecard">
+        <h2>Front 9</h2>
+        <div class="hole-list" id="front-nine"></div>
+
+        <h2>Back 9</h2>
+        <div class="hole-list" id="back-nine"></div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
